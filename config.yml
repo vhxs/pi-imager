@@ -1,0 +1,11 @@
+image:
+  dir: images/
+  os_image: 2021-05-07-raspios-buster-arm64.img
+network:
+  dhcpcd: etc/dhcpcd.conf
+fs:
+  device: /dev/sdc
+  mount: /media/vsaraph/
+  boot: boot/
+  root: rootfs/
+  shadow: etc/shadow

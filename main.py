@@ -84,9 +84,11 @@ def modify_dhcpcd(config):
     dhcpcd_rel_path = network_info["dhcpcd"]
     dhcpcd_path = os.path.join(device_path, root_dir, dhcpcd_rel_path)
     ip_address = input("IP address: ")
+    router = input("Router: ")
 
     dhcpcd_file = open(dhcpcd_path, "a")
     dhcpcd_file.write(f"static ip_address={ip_address}/24\n")
+    dhcpcd_file.write(f"static routers={router}\n")
     dhcpcd_file.close()
 
 
@@ -149,7 +151,3 @@ if __name__ == '__main__':
     modify_shadow(c)
 
     eject(c)
-
-# Dependencies:
-# - psudo
-# - rpi-imager

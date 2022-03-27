@@ -1,5 +1,5 @@
 # pi-imager
-Python script to make ssh-able SD card images super easy.
+Python tool to create microSD cards with OS installed, that are ssh-able, and that auto-connected to a specified access point.
 
 - Depends on `rpi-imager` and `psudo`.
 - Must download `.img` file and save to `images/` directory.

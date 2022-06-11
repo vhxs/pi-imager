@@ -1,4 +1,4 @@
-# pi-imager
+# Rpi Cluster-er
 Python tool to create microSD cards with OS installed, that are ssh-able, and that auto-connected to a specified access point.
 
 - Depends on `rpi-imager` and `psudo`.

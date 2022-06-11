@@ -1,6 +1,7 @@
 # Rpi Cluster-er
-Python tool to create microSD cards with OS installed, that are ssh-able, and that auto-connected to a specified access point.
+Originally started as a project to automatically create Rpi OS images that are ssh-able and autoconnect to my home wifi. Let's be more ambitious with this and automate the setup/configuration of a Kubernetes cluster on top of a collection of RPis that I own.
 
+# Burning a new OS image
 - Depends on `rpi-imager` and `psudo`.
 - Must download `.img` file and save to `images/` directory.
 - Configure by modifying `config.yml`. Defines the following

@@ -13,3 +13,7 @@ Python tool to create microSD cards with OS installed, that are ssh-able, and th
 # todo
 - [ ] configure install script to add ssh public key specified in `config.yml`. This is so we can communicate passwordlessly from an ansible control node
 - [ ] k8s-ify the pis?
+
+# related knowledge
+- https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
+- https://opensource.com/article/20/6/kubernetes-raspberry-pi

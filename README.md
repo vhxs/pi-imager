@@ -20,6 +20,6 @@ Python tool to create microSD cards with OS installed, that are ssh-able, and th
 - https://opensource.com/article/20/6/kubernetes-raspberry-pi
   - on raspbian buster, edit `/boot/cmdline.txt` instead of `/boot/firmware/cmdline.txt` to enable cgroups etc
   - seems that after k8s version 1.24, Docker is no longer supported as a CRI (container runtime engine) `
-  - `kubectl` crashloops until it's given a thing to do?
+  - `kubelet` crashloops until it's given a thing to do?
   - using k8s requires that you disable swap, can be done with `sudo swapoff -a`
   - can run Lens IDE on my laptop, entirely outside of the cluster, by pointing to a control node in `kubeconfig`?

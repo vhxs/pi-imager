@@ -9,3 +9,6 @@ Python tool to create microSD cards with OS installed, that are ssh-able, and th
   - Location of shadow file on OS, to set the password you want
   - Location of DHCP config file, so you can set whatever static IP address you want
 - Run `psudo python main.py` 
+
+# todo
+- [ ] configure install script to add ssh public key specified in `config.yml`. This is so we can communicate passwordlessly from an ansible control node

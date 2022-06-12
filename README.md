@@ -15,7 +15,6 @@ Originally started as a project to automatically create Rpi OS images that are s
 - [ ] configure install script to add ssh public key specified in `config.yml`. This is so we can communicate passwordlessly from an ansible control node
 - [ ] rename the hostname in the install script so they're not all named `raspberrypi` (k8s yells at me for this)
 - [ ] ansibilize the installation/setup of kubernetes
-- [ ] k8s-ify the pis?
 
 ## k8s notes
 - https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server

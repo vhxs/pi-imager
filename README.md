@@ -1,7 +1,7 @@
 # Rpi Cluster-er
 Originally started as a project to automatically create Rpi OS images that are ssh-able and autoconnect to my home wifi. Let's be more ambitious with this and automate the setup/configuration of a Kubernetes cluster on top of a collection of RPis that I own.
 
-# Burning a new OS image
+## Burning a new OS image
 - Depends on `rpi-imager` and `psudo`.
 - Must download `.img` file and save to `images/` directory.
 - Configure by modifying `config.yml`. Defines the following
@@ -11,12 +11,13 @@ Originally started as a project to automatically create Rpi OS images that are s
   - Location of DHCP config file, so you can set whatever static IP address you want
 - Run `psudo python main.py` 
 
-# todo
+## todo
 - [ ] configure install script to add ssh public key specified in `config.yml`. This is so we can communicate passwordlessly from an ansible control node
+- [ ] rename the hostname in the install script so they're not all named `raspberrypi` (k8s yells at me for this)
 - [ ] ansibilize the installation/setup of kubernetes
 - [ ] k8s-ify the pis?
 
-# k8s notes
+## k8s notes
 - https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server
 - https://opensource.com/article/20/6/kubernetes-raspberry-pi
   - on raspbian buster, edit `/boot/cmdline.txt` instead of `/boot/firmware/cmdline.txt` to enable cgroups etc

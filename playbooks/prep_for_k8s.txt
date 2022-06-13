@@ -1,5 +1,3 @@
-# Turn this into an ansible playbook for automated installation across all RPis
-
 wget https://github.com/containerd/containerd/releases/download/v1.6.6/containerd-1.6.6-linux-arm64.tar.gz
 sudo tar Cxzvf /usr/local/ containerd-1.6.6-linux-arm64.tar.gz
 wget https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
@@ -8,6 +6,8 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now containerd
 
 sudo sed -i '$ s/$/ cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 swapaccount=1/' /boot/cmdline.txt
+
+sudo modprobe br_netfilter
 
 cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -22,7 +22,7 @@ sudo mv config.toml /etc/containerd/
 # turn on cgroups in config.toml
 
 sudo systemctl restart containerd
-sudo reboot
+
 
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
@@ -31,7 +31,12 @@ EOF
 
 sudo apt update && sudo apt install -y kubelet kubeadm kubectl
 
-sudo swapoff -a
+sudo apt-mark hold kubelet kubeadm kubectl
 
-sudo modprobe br_netfilter
+sudo systemctl disable dphys-swapfile
+
+sudo apt-get install runc
+
+
+sudo reboot
 sudo sysctl net.bridge.bridge-nf-call-iptables=1

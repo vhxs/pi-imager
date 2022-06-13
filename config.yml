@@ -1,6 +1,6 @@
 image:
   dir: images/
-  os_image: 2021-05-07-raspios-buster-arm64.img
+  os_image: 2022-04-04-raspios-bullseye-arm64-lite.img.xz
 network:
   dhcpcd: etc/dhcpcd.conf
 fs:

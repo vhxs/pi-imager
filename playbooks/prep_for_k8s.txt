@@ -1,3 +1,5 @@
+# All of this needs to be made idempotent. Ansible playbooks should be idempotent. f(f(x)) = f(x).
+
 wget https://github.com/containerd/containerd/releases/download/v1.6.6/containerd-1.6.6-linux-arm64.tar.gz
 sudo tar Cxzvf /usr/local/ containerd-1.6.6-linux-arm64.tar.gz
 wget https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
